@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">android_tv_frontend</string>
-    
+
     <!-- Rating Screen Strings -->
     <string name="rating_title">Did you like it?</string>
     <string name="rating_message">Your vote helps us recommend more content like this.</string>
     <string name="rating_like">I like it</string>
     <string name="rating_love">I love it</string>
-    <string name="rating_dislike">I don\'t like it</string>
+    <string name="rating_dislike">I don't like it</string>
     <string name="rating_close">Close</string>
-    <string name="rating_countdown">Closing in %d seconds</string>
+    <string name="rating_countdown">Closing in %1$d seconds</string>
+
+    <!-- Details -->
+    <string name="rate_this">Rate</string>
+    <string name="details_poster_cd">Poster</string>
+    <string name="details_synopsis_placeholder">A gripping synopsis placeholder that introduces the premise of the selected media item with stylish Ocean theme visuals.</string>
 </resources>

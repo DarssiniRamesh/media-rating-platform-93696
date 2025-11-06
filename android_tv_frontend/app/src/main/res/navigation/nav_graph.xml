@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Navigation graph for Android TV app -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/browseFragment">
+
+    <fragment
+        android:id="@+id/browseFragment"
+        android:name="com.example.android_tv_frontend.ui.browse.BrowseFragment"
+        android:label="Browse">
+        <action
+            android:id="@+id/action_browse_to_details"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.android_tv_frontend.ui.details.DetailsFragment"
+        android:label="Details">
+        <action
+            android:id="@+id/action_details_to_browse"
+            app:destination="@id/browseFragment" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/ratingDialog"
+        android:name="com.example.android_tv_frontend.ui.rating.RatingDialogFragment"
+        android:label="Rate" />
+</navigation>

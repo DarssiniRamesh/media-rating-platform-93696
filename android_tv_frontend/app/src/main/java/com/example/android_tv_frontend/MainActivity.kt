@@ -2,42 +2,29 @@ package com.example.android_tv_frontend
 
 import android.os.Bundle
 import androidx.fragment.app.FragmentActivity
-import android.view.KeyEvent
-import android.widget.TextView
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 
 /**
- * Main Activity for Android TV
- * Extends FragmentActivity for Leanback compatibility
+ * PUBLIC_INTERFACE
+ * Main Activity for Android TV.
+ *
+ * This hosts the NavHostFragment which displays the Browse screen and navigates to Details.
+ * Ocean Professional theme is applied via styles.xml.
  */
 class MainActivity : FragmentActivity() {
-
-    private lateinit var titleText: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        
-        titleText = findViewById(R.id.title_text)
-        titleText.text = "android_tv_frontend"
-        
-        // TODO: Initialize your rating screen components here
-        // setupRatingOverlay()
+
+        // Ensure NavHostFragment is attached.
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as? NavHostFragment
+                ?: return
+        navHostFragment.navController // touch to init
     }
 
-    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
-        // Handle TV remote control inputs
-        return when (keyCode) {
-            KeyEvent.KEYCODE_DPAD_CENTER,
-            KeyEvent.KEYCODE_ENTER -> {
-                // Handle SELECT/OK button
-                true
-            }
-            KeyEvent.KEYCODE_BACK -> {
-                // Handle BACK button
-                finish()
-                true
-            }
-            else -> super.onKeyDown(keyCode, event)
-        }
-    }
+    // PUBLIC_INTERFACE
+    fun navController() = findNavController(R.id.nav_host_fragment)
 }
