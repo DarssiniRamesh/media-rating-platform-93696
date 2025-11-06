@@ -1,1 +1,3 @@
-# media-rating-platform-93696
+# Project Repository
+
+This is the initial README file for the project.
